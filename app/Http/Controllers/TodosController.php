@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTodosRequest;
 use App\Http\Requests\UpdateTodosRequest;
 use App\Models\Todos;
+use App\Http\Resources\TodosResource;
+use Illuminate\Support\Facades\DB;
 
 class TodosController extends Controller
 {
@@ -15,7 +17,8 @@ class TodosController extends Controller
      */
     public function index()
     {
-        //
+        return TodosResource::collection(Todos::all());
+        
     }
 
     /**
@@ -25,7 +28,7 @@ class TodosController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -47,7 +50,7 @@ class TodosController extends Controller
      */
     public function show(Todos $todos)
     {
-        //
+        return $todos;
     }
 
     /**

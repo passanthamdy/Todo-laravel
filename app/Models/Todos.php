@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Todos extends Model
 {
     use HasFactory;
+    protected $fillable = ['id','title','body','state'];
 }
