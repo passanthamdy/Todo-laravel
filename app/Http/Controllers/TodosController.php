@@ -38,7 +38,12 @@ class TodosController extends Controller
      */
     public function store(StoreTodosRequest $request)
     {
-        //
+        $todo= Todos::create([
+            'title' => $request['title'],
+            'body' => $request['body'],
+            'state' => $request['state']
+        ]);
+        return $todo;
     }
 
     /**
@@ -49,7 +54,7 @@ class TodosController extends Controller
      */
     public function show(Todos $todos)
     {
-        return 'anytest';
+        return $todos;
     }
 
     /**

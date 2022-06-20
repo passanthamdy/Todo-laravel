@@ -18,7 +18,7 @@ use App\Http\Controllers\TodosController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+Route::post('/todos', [TodosController::class, 'store']);
 Route::get('/todos', [TodosController::class, 'index']);
 Route::get('/todos/{todos}', [TodosController::class, 'show']);
 Route::patch('/todos/{todos}', [TodosController::class, 'update']);

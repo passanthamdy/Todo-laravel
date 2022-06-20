@@ -24,7 +24,7 @@ class UpdateTodosRequest extends FormRequest
     public function rules()
     {
         return [
-            // 
+       
         ];
     }
 }
