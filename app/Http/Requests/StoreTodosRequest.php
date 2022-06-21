@@ -24,7 +24,9 @@ class StoreTodosRequest extends FormRequest
     public function rules()
     {
         return [
-       
+            'title' => ['required',],
+            'body' =>['required','max:256'],
+
         ];
     }
 }
