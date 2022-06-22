@@ -92,4 +92,18 @@ class TodosController extends Controller
         $todos->delete();
         return response()->json(['message'=>"deleted"],204);
     }
+    public function finish(Todos $todos)
+    {
+       if($todos->state){
+            $todos->state = false;}
+       
+       else{
+        $todos->state =true;
+    }
+    $todos->save();
+        
+       return $todos;
+       
+        
+    }
 }

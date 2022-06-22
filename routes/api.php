@@ -23,5 +23,6 @@ Route::get('/todos', [TodosController::class, 'index']);
 Route::get('/todos/{todos}', [TodosController::class, 'show']);
 Route::patch('/todos/{todos}', [TodosController::class, 'update']);
 Route::delete('/todos/{todos}', [TodosController::class, 'destroy']);
+Route::post('/todos/{todos}', [TodosController::class, 'finish']);
 
 
